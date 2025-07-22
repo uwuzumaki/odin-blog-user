@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Post from "../Posts/Post";
 
 const PostContainer = () => {
@@ -21,11 +22,13 @@ const PostContainer = () => {
   return (
     <>
       <h1>Post</h1>
-      <ul>
+      <div className="container flex">
         {posts.map((post) => (
-          <Post post={post} key={post.id} />
+          <Link to={`/post/${post.id}`}>
+            <Post post={post} key={post.id} />
+          </Link>
         ))}
-      </ul>
+      </div>
     </>
   );
 };
