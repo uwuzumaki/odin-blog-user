@@ -1,10 +1,10 @@
 const Post = (data) => {
   const post = data.post;
   return (
-    <>
-      <li>{post.title}</li>
-      <li>{post.content}</li>
-    </>
+    <div className="m-2 border border-solid border-slate-300 p-4">
+      <div>{post.title}</div>
+      <div>{post.content}</div>
+    </div>
   );
 };
 
