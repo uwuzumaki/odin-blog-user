@@ -4,7 +4,6 @@ import PostContainer from "./Components/PostContainer/PostContainer";
 function App() {
   return (
     <>
-      <div>Hello world</div>
       <PostContainer />
     </>
   );
