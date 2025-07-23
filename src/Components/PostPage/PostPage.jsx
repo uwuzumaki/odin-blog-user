@@ -1,41 +1,38 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import CommentForm from "../CommentForm/CommentForm";
 
 const PostPage = () => {
   const [post, setPost] = useState("");
-  const [comments, setComments] = useState("");
+  const [comments, setComments] = useState([]);
   const { id } = useParams();
 
-  useEffect(() => {
+  const fetchPosts = async () => {
     const url = `http://localhost:3000/post/${id}`;
-    const fetchData = async () => {
-      try {
-        const data = await axios.get(`${url}`);
-        setPost(data.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, [id]);
+    try {
+      const data = await axios.get(`${url}`);
+      setPost(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  useEffect(() => {
+  const fetchComments = async () => {
     const url = `http://localhost:3000/comment/${id}`;
-    const fetchData = async () => {
-      try {
-        const data = await axios.get(`${url}`);
-        setComments(data.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, [id]);
+    try {
+      const data = await axios.get(url);
+      setComments(data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    console.log(comments);
-  }, [comments]);
+    fetchPosts();
+    fetchComments();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>
@@ -45,9 +42,10 @@ const PostPage = () => {
         {post.content}
         Comments
         {comments.map((comment) => (
-          <div>{comment.content}</div>
+          <div key={comment.id}>{comment.content}</div>
         ))}
       </div>
+      <CommentForm post_id={id} onUpdate={fetchComments} />
     </div>
   );
 };
