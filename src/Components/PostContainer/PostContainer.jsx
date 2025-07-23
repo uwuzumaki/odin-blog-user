@@ -10,7 +10,7 @@ const PostContainer = () => {
     const url = "http://localhost:3000/post";
     const fetchData = async () => {
       try {
-        const data = await axios.get(`${url}`);
+        const data = await axios.get(url);
         setPosts(data.data);
       } catch (err) {
         console.log(err);
