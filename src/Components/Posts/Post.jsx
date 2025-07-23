@@ -3,7 +3,6 @@ const Post = (data) => {
   return (
     <div className="m-2 border border-solid border-slate-300 p-4">
       <div>{post.title}</div>
-      <div>{post.content}</div>
     </div>
   );
 };
