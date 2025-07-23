@@ -24,8 +24,8 @@ const PostContainer = () => {
       <h1>Post</h1>
       <div className="container flex">
         {posts.map((post) => (
-          <Link to={`/post/${post.id}`}>
-            <Post post={post} key={post.id} />
+          <Link to={`/post/${post.id}`} key={post.id}>
+            <Post post={post} />
           </Link>
         ))}
       </div>
