@@ -12,8 +12,7 @@ const CommentForm = ({ post_id, onUpdate }) => {
   const onSubmit = async (data) => {
     const url = `http://localhost:3000/comment/${post_id}`;
     try {
-      const res = await axios.post(url, data);
-      console.log(res);
+      await axios.post(url, data);
     } catch (err) {
       console.log(err);
     }
