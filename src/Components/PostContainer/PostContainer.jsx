@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Post from "../Posts/Post";
+import Hero from "../Hero/Hero";
 
 const PostContainer = () => {
   const [posts, setPosts] = useState([]);
@@ -21,8 +22,8 @@ const PostContainer = () => {
 
   return (
     <>
-      <h1>Post</h1>
-      <div className="container flex">
+      <Hero />
+      <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
         {posts.map((post) => (
           <Link to={`/post/${post.id}`} key={post.id}>
             <Post post={post} />
