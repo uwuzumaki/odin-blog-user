@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Post from "../Posts/Post";
 import Hero from "../Hero/Hero";
+import Footer from "../Footer/Footer";
 
 const PostContainer = () => {
   const [posts, setPosts] = useState([]);

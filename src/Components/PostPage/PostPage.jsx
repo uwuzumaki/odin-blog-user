@@ -3,6 +3,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import CommentForm from "../CommentForm/CommentForm";
+import Footer from "../Footer/Footer";
 
 const PostPage = () => {
   const [post, setPost] = useState("");
@@ -82,29 +83,32 @@ const PostPage = () => {
     );
   } else {
     return (
-      <div className="h-full min-h-0 flex-1 bg-[#f4f4f4]">
-        <div className="flex">
-          <Link className="" to="/">
-            &#8249;- Back
-          </Link>
+      <>
+        <div className="h-full min-h-0 flex-1 bg-[#f4f4f4]">
+          <div className="flex">
+            <Link className="" to="/">
+              &#8249;- Back
+            </Link>
+          </div>
+          <div className="container mx-auto flex max-w-[70%] flex-col border border-gray-300 bg-white md:max-w-[50%]">
+            <div className="flex flex-col items-start border-b border-b-gray-300 px-12 py-14">
+              <h1 className="my-4 text-3xl font-bold">{post.title}</h1>
+              <p>{moment(post.createAt).format("MMMM Do, YYYY")}</p>
+            </div>
+            <div className="flex border-b border-b-gray-300 px-12 py-14">
+              <p className="">{post.content}</p>
+            </div>
+            <div className="flex px-12 py-14">
+              <p className="text-xl">Comments</p>
+            </div>
+            <div className="flex flex-col items-start px-12">
+              <CommentRender comments={comments} />
+            </div>
+          </div>
+          <CommentForm post_id={id} onUpdate={fetchComments} />
+          <Footer />
         </div>
-        <div className="container mx-auto flex max-w-[70%] flex-col border border-gray-300 bg-white md:max-w-[50%]">
-          <div className="flex flex-col items-start border-b border-b-gray-300 px-12 py-14">
-            <h1 className="my-4 text-3xl font-bold">{post.title}</h1>
-            <p>{moment(post.createAt).format("MMMM Do, YYYY")}</p>
-          </div>
-          <div className="flex border-b border-b-gray-300 px-12 py-14">
-            <p className="">{post.content}</p>
-          </div>
-          <div className="flex px-12 py-14">
-            <p className="text-xl">Comments</p>
-          </div>
-          <div className="flex flex-col items-start px-12">
-            <CommentRender comments={comments} />
-          </div>
-        </div>
-        <CommentForm post_id={id} onUpdate={fetchComments} />
-      </div>
+      </>
     );
   }
 };
