@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="relative flex h-[300px] flex-col items-center justify-center overflow-hidden">
       <div className="absolute z-2 flex h-full w-full flex-col items-center justify-center bg-black/60">
         <p className="mb-2 text-4xl text-white opacity-100">I Love to Blog!</p>
-        <p className="mt-2 text-xl text-[#FFFFFF] opacity-100">
+        <p className="mt-2 text-xl text-[#FFFFFF]">
           Find more blogs about my journey through web development here!
         </p>
       </div>
