@@ -23,9 +23,14 @@ const PostContainer = () => {
   return (
     <>
       <Hero />
-      <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+      {/* pr-[calc(100vw-98%)] is to ensure the scrollbar doesn't cover the content on small screen sizes */}
+      <div className="container mx-auto grid grid-cols-1 gap-4 pr-[calc(100vw-98%)] md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
-          <Link to={`/post/${post.id}`} key={post.id}>
+          <Link
+            className="w-full self-center justify-self-center md:max-w-[320px]"
+            to={`/post/${post.id}`}
+            key={post.id}
+          >
             <Post post={post} />
           </Link>
         ))}
