@@ -16,3 +16,4 @@ API: https://github.com/uwuzumaki/odin-blog-api
 - Better overall styling/responsiveness
 - Having tags render properly on the individual posts
 - Fixing pagination
+- Error handling pages
