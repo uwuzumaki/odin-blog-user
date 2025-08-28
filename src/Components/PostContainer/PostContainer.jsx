@@ -15,8 +15,7 @@ const PostContainer = () => {
       try {
         setLoading(true);
         const data = await axios.get(url);
-        console.log("123");
-        setPosts(data.data);
+        setPosts(data.data.posts);
       } catch (err) {
         console.log(err);
       } finally {
@@ -30,7 +29,7 @@ const PostContainer = () => {
     if (loading) {
       return (
         <>
-          <span className="col-span-3 animate-pulse py-36 text-black/80">
+          <span className="col-span-3 flex animate-pulse justify-center py-36 text-black/80">
             Loading! Please wait...
           </span>
         </>
