@@ -76,7 +76,7 @@ const PostPage = () => {
     return (
       <>
         {" "}
-        <div className="relative h-full min-h-0 flex-1 bg-[#f4f4f4]">
+        <div className="relative flex h-full min-h-0 flex-1 items-center justify-center bg-[#f4f4f4]">
           <span className="absolute top-[50%] animate-pulse">Loading...</span>
         </div>
       </>
