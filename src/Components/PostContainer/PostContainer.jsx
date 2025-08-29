@@ -10,6 +10,7 @@ const PostContainer = () => {
 
   useEffect(() => {
     const url = `${import.meta.env.VITE_URL}/post`;
+    console.log(url);
     const fetchData = async () => {
       try {
         setLoading(true);
