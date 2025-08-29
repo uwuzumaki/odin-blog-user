@@ -5,6 +5,8 @@ The user page for the Blog Api Project.
 Admin page: https://github.com/uwuzumaki/odin-blog-admin
 API: https://github.com/uwuzumaki/odin-blog-api
 
+Front end deploy: https://elaborate-sherbet-930a23.netlify.app/
+
 ## Features
 
 - Post list
