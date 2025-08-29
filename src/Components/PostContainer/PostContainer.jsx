@@ -9,7 +9,7 @@ const PostContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = `${import.meta.env.env.VITE_URL}/post`;
+    const url = `${import.meta.env.VITE_URL}/post`;
     const fetchData = async () => {
       try {
         setLoading(true);
