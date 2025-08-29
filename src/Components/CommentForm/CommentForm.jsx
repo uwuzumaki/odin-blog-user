@@ -10,7 +10,7 @@ const CommentForm = ({ post_id, onUpdate }) => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    const url = `http://localhost:3000/comment/${post_id}`;
+    const url = `${import.meta.env.env.VITE_URL}/${post_id}`;
     try {
       await axios.post(url, data);
     } catch (err) {

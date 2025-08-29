@@ -3,14 +3,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Post from "../Posts/Post";
 import Hero from "../Hero/Hero";
-import Footer from "../Footer/Footer";
 
 const PostContainer = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = "http://localhost:3000/post";
+    const url = `${import.meta.env.env.VITE_URL}/post`;
     const fetchData = async () => {
       try {
         setLoading(true);

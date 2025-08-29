@@ -13,7 +13,7 @@ const PostPage = () => {
   const { id } = useParams();
 
   const fetchPosts = async () => {
-    const url = `http://localhost:3000/post/${id}`;
+    const url = `${import.meta.env.env.VITE_URL}/post/${id}`;
     try {
       setLoadingPosts(true);
       const data = await axios.get(`${url}`);
@@ -26,7 +26,7 @@ const PostPage = () => {
   };
 
   const fetchComments = async () => {
-    const url = `http://localhost:3000/comment/${id}`;
+    const url = `${import.meta.env.env.VITE_URL}/comment/${id}`;
     try {
       setLoadingComments(true);
       const data = await axios.get(url);
